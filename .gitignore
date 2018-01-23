@@ -1,0 +1,17 @@
+# Pycharm
+.idea/*
+
+# pyc
+*.pyc
+
+# html
+*.html
+
+# json
+*.json
+
+# csv
+*.csv
+
+# private
+atlednolispe_*
