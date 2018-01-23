@@ -5,8 +5,8 @@ import smtplib
 from .atlednolispe_account import smtp_server, smtp_port, sender, receiver, password
 # from .account import xxx
 # can't direct run the file
-# use *python -m crawler.send_email.test_email* to run the script
-# ref https://stackoverflow.com/questions/72852/how-to-do-relative-imports-in-python/73149#73149
+# use *python -m send_email.test_email* to run the script
+# ref: https://stackoverflow.com/questions/72852/how-to-do-relative-imports-in-python/73149#73149
 
 
 def _format_addr(s):
