@@ -1,7 +1,7 @@
 import re
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
-from baidubaike.crawler_exception import NoURL, NoHTML
+from baidubaike_distributed.crawler_exception import NoURL, NoHTML
 
 
 class HTMLParser:
