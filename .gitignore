@@ -18,3 +18,6 @@ atlednolispe_*
 
 # semi-finished script
 semi_*
+
+# geckodriver.log
+geckodriver.log
