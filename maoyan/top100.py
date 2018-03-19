@@ -6,6 +6,7 @@ import requests
 from requests.exceptions import RequestException
 
 
+# requests请求中需要加入headers信息否则被禁
 HEADERS = {
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) ' 
                   'Chrome/65.0.3325.162 Safari/537.36',
@@ -15,6 +16,9 @@ URL = 'https://maoyan.com/board/4'
 
 
 def get_single_html(offset):
+    """
+    获得TOP100的单页html内容
+    """
     try:
         response = requests.get(URL, params={'offset': offset}, headers=HEADERS)
         if response.status_code == 200:
@@ -26,6 +30,9 @@ def get_single_html(offset):
 
 
 def parse_html(html):
+    """
+    通过正则匹配出电影的排名,图片,链接,电影名,主演,发行时间,发行地,评分。
+    """
     pattern = re.compile('<dd>.*?class="board-index.*?">(\d*?)<.*?data-src="(.*?)".*?<p class="name">.*?<a href="(.*?)"'
                          ' title="(.*?)".*?</p>.*?<p class="star">(.*?)</p>.*?<p class="releasetime">(.*?)</p>.*?'
                          'class="integer">(.*?)<.*?class="fraction">(.*?)<.*?</dd>',
@@ -56,6 +63,9 @@ def crawler(offset):
 
 
 def main():
+    """
+    简单的通过多进程加快爬虫速度。
+    """
     pool = Pool()
     pool.map(crawler, (i*10 for i in range(10)))
 
