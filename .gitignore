@@ -24,3 +24,6 @@ semi_*
 
 # geckodriver.log
 geckodriver.log
+
+# images
+*.jpg
