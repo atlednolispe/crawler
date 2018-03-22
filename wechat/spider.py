@@ -150,7 +150,7 @@ def save_to_mongodb(data):
         print('Save to MongoDB failed! ({})'.format(data))
 
 
-if __name__ == '__main__':
+def main():
     for i in range(1, 101):
         print(i)
         if i % 5 == 0:  # ERROR: i+1 % 10
@@ -174,3 +174,7 @@ if __name__ == '__main__':
                     save_to_mongodb(data)
         else:
             print('{} parse url_list failed!'.format(QUERY))
+
+
+if __name__ == '__main__':
+    main()
