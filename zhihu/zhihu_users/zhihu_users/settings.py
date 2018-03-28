@@ -9,6 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
+from .config import (
+    REDIS_USER, REDIS_PASSWORD, REDIS_HOSTNAME, MONGO_HOST
+)
+
 BOT_NAME = 'zhihu_users'
 
 SPIDER_MODULES = ['zhihu_users.spiders']
@@ -92,5 +96,5 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # MongoDB
-MONGO_URI = '127.0.0.1'
+MONGO_URI = MONGO_HOST
 MONGO_DATABASE = 'zhihu'

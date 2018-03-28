@@ -9,7 +9,8 @@ url = 'https://yun.baidu.com/'
 driver = webdriver.Chrome()
 driver.get(url)
 
-c = driver.find_element_by_class_name('account-title')
+time.sleep(3)
+c = driver.find_element_by_xpath('//*[@id="TANGRAM__PSP_4__footerULoginBtn"]')
 c.click()
 
 time.sleep(3)
@@ -25,3 +26,11 @@ password.send_keys(p)
 
 submit = driver.find_element_by_class_name('pass-button-submit')
 submit.click()
+
+time.sleep(10)
+
+cookies = {}
+for item in driver.get_cookies():
+    cookies[item['name']] = item['value']
+
+print(cookies)
